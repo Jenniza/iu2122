@@ -30,3 +30,4 @@ La aplicación de servidor funciona con Spring Boot, y puedes lanzarla en local 
 
 *El profesor proporcionará un servidor (con configuración cambiada con respecto a la anterior) que permanecerá encendido hasta el fin de las prácticas de la asignatura. Lanzar o no otro servidor en local, o jugar con el codigo, es completamente opcional. Ver [licencia](https://github.com/manuel-freire/iu2122/blob/main/LICENSE)*
 
+## Nombres:
