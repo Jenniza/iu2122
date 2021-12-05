@@ -1,3 +1,12 @@
+# Participantes
+
+Grupo 6
+Pablo Díaz Rodríguez
+Elena Fernández Jiménez
+Cristóbal Saraiba Torres
+Javier Vaquero Fernández
+Jennifer Zapata Arcienega
+
 # iu2122
 
 Servidor y código de plantilla para una interfaz de gestión de valoraciones de películas, a usar para las prácticas de la asignatura *Interfaces de Usuario* de los grados de Informática de la Universidad Complutense, en su edición 2021-22.
@@ -29,7 +38,3 @@ La aplicación de servidor funciona con Spring Boot, y puedes lanzarla en local 
 - Contraseñas y contenido inicial de la BD: [import.sql](https://github.com/manuel-freire/iu2122/blob/main/src/main/resources/import.sql)
 
 *El profesor proporcionará un servidor (con configuración cambiada con respecto a la anterior) que permanecerá encendido hasta el fin de las prácticas de la asignatura. Lanzar o no otro servidor en local, o jugar con el codigo, es completamente opcional. Ver [licencia](https://github.com/manuel-freire/iu2122/blob/main/LICENSE)*
-
-## Nombres:
-
-Heehee
