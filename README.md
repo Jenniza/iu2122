@@ -1,11 +1,11 @@
 # Participantes
 
 Grupo 6
-Pablo Díaz Rodríguez
-Elena Fernández Jiménez
-Cristóbal Saraiba Torres
-Javier Vaquero Fernández
-Jennifer Zapata Arcienega
+- Pablo Díaz Rodríguez
+- Elena Fernández Jiménez
+- Cristóbal Saraiba Torres
+- Javier Vaquero Fernández
+- Jennifer Zapata Arcienega
 
 # iu2122
 
