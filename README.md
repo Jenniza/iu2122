@@ -8,17 +8,16 @@ Grupo 6
 - Jennifer Zapata Arcienega
 
 # Cambios 
-Nuestra pagina va a tener como base las tres columnas que ya tenia, pero en cada columna estara un funcionalidad diferente. 
+Nuestra pagina va a tener como base las tres columnas que ya tenia, pero en cada columna estara una funcionalidad diferente. 
 - Index
-    - Hemos cambiado el nombre de la pagina
-    - Modificado el hearder
-- Añadido
-    - Groups.html
-    - users.html
+    - Modificacion del title
+    - Se ha creado una barra de navegacion con columnas y filas para su correcta estructura
 - La lista de películas se podrá filtrar por 
     - Título
     - Director
     - Actores
+- Archivo custom.css
+    - Todos los cambios y creaciones de clase aparecen a partir de la línea 67
 
 # iu2122
 
