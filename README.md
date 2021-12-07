@@ -9,11 +9,10 @@ Grupo 6
 
 # Cambios 
 - Index
-    Hemos cambiado el nombre de la pagina
-    Hemos a daptado 
+    - Hemos cambiado el nombre de la pagina
 - Añadido
-    Groups.html
-    users.html
+    - Groups.html
+    - users.html
 
 # iu2122
 
