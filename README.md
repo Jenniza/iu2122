@@ -7,6 +7,13 @@ Grupo 6
 - Javier Vaquero Fernández
 - Jennifer Zapata Arcienega
 
+# Cambios 
+- Index
+    - Hemos cambiado el nombre de la pagina
+- Añadido
+    - Groups.html
+    - users.html
+
 # iu2122
 
 Servidor y código de plantilla para una interfaz de gestión de valoraciones de películas, a usar para las prácticas de la asignatura *Interfaces de Usuario* de los grados de Informática de la Universidad Complutense, en su edición 2021-22.
