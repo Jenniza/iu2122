@@ -8,8 +8,10 @@ Grupo 6
 - Jennifer Zapata Arcienega
 
 # Cambios 
+Nuestra pagina va a tener como base las tres columnas que ya tenia, pero en cada columna estara un funcionalidad diferente. 
 - Index
     - Hemos cambiado el nombre de la pagina
+    - Modificado el hearder
 - Añadido
     - Groups.html
     - users.html
