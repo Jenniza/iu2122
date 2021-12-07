@@ -111,30 +111,18 @@
     </div>
 
     <!-- barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <!-- nombre del sitio; es un enlace que lleva a la página ppal -->
-            <a class="navbar-brand" href="#">FMS</a>
-            <!-- menu hamburguesa si no cabe todo -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <div class="container-fluid barra">
+        <div class="row justify-content-center">
+            <div class="col-md-4 align-self-center logo "><img id="logoIcon" src="./img/Logo_preview_rev_1.png"></div>
+            <div class="col titulo align-self-center">FILMS MANAGER SYSTEM</div>
+            <div class="col-sm-1 align-self-center">
+                <div class="row justify-content-center" id="userIcon"><img src="./img/userIcon.png"></div>
+                <div class="row justify-content-center"> <a class="logout" href="#">Logout</a> </div>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Peliculas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="groups.html">Grupos</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="users.html">Usuarios <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
             </div>
         </div>
-    </nav>
+    </div>
+
 
     <!-- container-fluid expande el contenedor para que ocupe todo el espacio disponible -->
     <div class="container-fluid">
@@ -163,8 +151,7 @@
                     </div>
 
                 </div>
-                <div class="accordion" id="movies">
-                </div>
+
                 <div id="addMovie" class="formularioValidado">
                     <h3>Añadir película</h3>
                     <form class="row">
@@ -195,6 +182,10 @@
                         </div>
                     </form>
                 </div>
+                
+                <div class="accordion" id="movies">
+                </div>
+                
             </div>
 
             <div class="col-sm-4 iulist">
@@ -217,60 +208,7 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col-sm-8 anuncio">
-                <h2>Ejemplo de formulario con validación y menú emergente</h2>
-                <form method="post" id="form-anuncio">
-                    <div class="form-row datos-anuncio">
-                        <div class="form-group col-md-6">
-                            <label for="inputTitulo">Título del anuncio</label>
-                            <input type="text" class="form-control" id="inputTitulo" placeholder="Vendo Moto" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputCategorias">Categorías</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" readonly id="inputCategorias" placeholder="(ninguna)">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalSeleccionCategoria">
-                                        Cambiar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row texto-anuncio">
-                        <div class="form-group col">
-                            <label for="inputTextoAnuncio">Cuerpo del
-                                anuncio</label>
-                            <textarea id="inputTextoAnuncio" class="form-control">
-Hello, World!
-                </textarea>
-                        </div>
-                    </div>
-                    <!-- botón para enviar el formulario; justify-content-end lo justifica a la derecha -->
-                    <div class="form-row justify-content-end">
-                        <button type="submit" id="boton-publicar" class="btn btn-primary">Publicar anuncio
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <div id="dropdownBuscablePelis" class="form-group col-md-4">
-                <h2>Ejemplo de dropdown con peliculas</h2>
-                <div class="row-md-4">
-                    <input id="busqueda" type="search" class="form-control" placeholder="Filtrar por titulo" />
-                </div>
-                <div class="row-md-4">
-                    <select class="multiple from-control" multiple size="6">
-                        <option value="a">a</option>
-                        <option value="b">b</option>
-                    </select>
-                </div>
-            </div>
-
-        </div>
-    </div>
+            
 
     <!-- Modal de selección de categorías (lanzado por un botón) -->
     <div class="modal fade" id="modalSeleccionCategoria" tabindex="-1" role="dialog" aria-labelledby="tituloModalCategorias" aria-hidden="true">
