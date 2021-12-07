@@ -519,9 +519,39 @@ document.querySelector("#movieSearch").addEventListener("input", e => {
         const m = Pmgr.resolve(c.dataset.id);
         // aquí podrías aplicar muchos más criterios
         const ok = m.name.toLowerCase().indexOf(v) >= 0;
+        //const ok = m.director.toLowerCase().indexOf(v) >= 0;
         c.style.display = ok ? '' : 'none';
     });
 })
+
+
+//Grupo 6
+/**
+ * búsqueda básica de películas, por director
+ */
+ document.querySelector("#directorSearch").addEventListener("input", e => {
+    const v = e.target.value.toLowerCase();
+    document.querySelectorAll("#movies div.card").forEach(c => {
+        const m = Pmgr.resolve(c.dataset.id);
+        // aquí podrías aplicar muchos más criterios
+        const ok = m.director.toLowerCase().indexOf(v) >= 0;
+        c.style.display = ok ? '' : 'none';
+    });
+})
+
+/**
+ * búsqueda básica de películas, por actores
+ */
+ document.querySelector("#actorsSearch").addEventListener("input", e => {
+    const v = e.target.value.toLowerCase();
+    document.querySelectorAll("#movies div.card").forEach(c => {
+        const m = Pmgr.resolve(c.dataset.id);
+        // aquí podrías aplicar muchos más criterios
+        const ok = m.actors.toLowerCase().indexOf(v) >= 0;
+        c.style.display = ok ? '' : 'none';
+    });
+})
+
 
 // cosas que exponemos para poder usarlas desde la consola
 window.modalEditMovie = modalEditMovie;

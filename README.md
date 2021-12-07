@@ -15,6 +15,10 @@ Nuestra pagina va a tener como base las tres columnas que ya tenia, pero en cada
 - Añadido
     - Groups.html
     - users.html
+- La lista de películas se podrá filtrar por 
+    - Título
+    - Director
+    - Actores
 
 # iu2122
 
