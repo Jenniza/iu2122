@@ -15,6 +15,137 @@
 </head>
 
 <body>
+    
+    <div class="container-fluid barra">
+        <div class="row justify-content-center">
+            <div class="col-md-4 align-self-center logo "><img id="logoIcon" src="./img/Logo_preview_rev_1.png"></div>
+            <div class="col titulo align-self-center">FILMS MANAGER SYSTEM</div>
+            <div class="col-sm-1 align-self-center">
+                <div class="row justify-content-center" id="userIcon"><img src="./img/userIcon.png"></div>
+                <div class="row justify-content-center"> <a class="logout" href="#">Logout</a> </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- ver https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="peliculas-tab" data-bs-toggle="tab" data-bs-target="#peliculasTab" type="button" role="tab" aria-controls="home" aria-selected="true">Peliculas</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="grupos-tab" data-bs-toggle="tab" data-bs-target="#gruposTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Grupos</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="usuarios-tab" data-bs-toggle="tab" data-bs-target="#usuariosTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Usuarios</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="peliculasTab" role="tabpanel" aria-labelledby="peliculas-tab">
+            <div id="peliculas">
+              <ul>
+                
+                <div class="col-sm-4 iulist">
+                    <div class="row">
+                        <div class="col-auto">
+                            <h2>Peliculas </h2>
+                        </div>
+                         <!-- Para filtrar por director -->
+                        <ul><div class="col input-group mb-3">
+                            <input type="search" class="form-control" id="movieSearch" placeholder="filtrar por título" aria-describedby="searchMovieLabel">
+                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                        </div>
+                        </ul>
+                        <!-- Para filtrar por director -->
+                        <div class="col input-group mb-3">
+                            <input type="search" class="form-control" id="directorSearch" placeholder="director" aria-describedby="searchMovieLabel">
+                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                        </div>
+                        <!-- Para filtrar por actores -->
+                        <div class="col input-group mb-3">
+                            <input type="search" class="form-control" id="actorsSearch" placeholder="actor" aria-describedby="searchMovieLabel">
+                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                        </div>
+    
+                    </div>
+    
+                    <div id="addMovie" class="formularioValidado">
+                        <h3>Añadir película</h3>
+                        <form class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="f1" name="name" placeholder="Título" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="f2" name="imdb" placeholder="ID en IMDB (ej.: tt1234567)" required pattern="tt[0-9]+">
+                            </div>
+    
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="director" placeholder="Director" required>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="actors" placeholder="Actores" required>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" name="year" placeholder="Año de estreno" min="1800" max="2022" required>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="number" class="form-control" name="minutes" placeholder="Duración en minutos" min="0" max="600" required>
+                            </div>
+    
+                            <div class="col-12 botones">
+                                <button class="btn btn-primary" type="submit">Añadir</button>
+                                <button class="btn btn-secondary generar" type="button">Generar</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="accordion" id="movies">
+                    </div>
+                    
+                </div>
+
+              </ul>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="gruposTab" role="tabpanel" aria-labelledby="grupos-tab">
+            <div id="grupos">
+              <ul>
+                <div class="col-sm-4 iulist">
+                    <h2>Grupos</h2>
+                    <div id="groups">
+    
+                    </div>
+                    <div id="addGroup">
+                        
+                    </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="usuariosTab" role="tabpanel" aria-labelledby="usuarios-tab">
+            <div id="usuarios">
+              <ul>
+                <div class="col-sm-4 iulist">
+                    <h2>Usuarios</h2>
+                    <div id="users">
+    
+                    </div>
+                    <div id="addUser">
+    
+                    </div>
+                </div>
+              </ul>
+      
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      
+
 
     <!-- Modal para dar un rating a una película -->
     <div class="modal fade" id="movieRate" tabindex="-1" aria-labelledby="movieRateLabel" aria-hidden="true">
@@ -111,102 +242,46 @@
     </div>
 
     <!-- barra de navegación -->
-    <div class="container-fluid barra">
-        <div class="row justify-content-center">
-            <div class="col-md-4 align-self-center logo "><img id="logoIcon" src="./img/Logo_preview_rev_1.png"></div>
-            <div class="col titulo align-self-center">FILMS MANAGER SYSTEM</div>
-            <div class="col-sm-1 align-self-center">
-                <div class="row justify-content-center" id="userIcon"><img src="./img/userIcon.png"></div>
-                <div class="row justify-content-center"> <a class="logout" href="#">Logout</a> </div>
+   
 
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
         </div>
-    </div>
-
+      </nav>
 
     <!-- container-fluid expande el contenedor para que ocupe todo el espacio disponible -->
     <div class="container-fluid">
         <div class="row">
             <!-- panel lateral, demostrando acordeones (secciones expansibles) -->
-            <div class="col-sm-4 iulist">
-                <div class="row">
-                    <div class="col-auto">
-                        <h2>Peliculas </h2>
-                    </div>
-                     <!-- Para filtrar por director -->
-                    <ul><div class="col input-group mb-3">
-                        <input type="search" class="form-control" id="movieSearch" placeholder="filtrar por título" aria-describedby="searchMovieLabel">
-                        <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                    </div>
-                    </ul>
-                    <!-- Para filtrar por director -->
-                    <div class="col input-group mb-3">
-                        <input type="search" class="form-control" id="directorSearch" placeholder="director" aria-describedby="searchMovieLabel">
-                        <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                    </div>
-                    <!-- Para filtrar por actores -->
-                    <div class="col input-group mb-3">
-                        <input type="search" class="form-control" id="actorsSearch" placeholder="actor" aria-describedby="searchMovieLabel">
-                        <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                    </div>
+            
 
-                </div>
+            
 
-                <div id="addMovie" class="formularioValidado">
-                    <h3>Añadir película</h3>
-                    <form class="row">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="f1" name="name" placeholder="Título" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="f2" name="imdb" placeholder="ID en IMDB (ej.: tt1234567)" required pattern="tt[0-9]+">
-                        </div>
-
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" name="director" placeholder="Director" required>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="text" class="form-control" name="actors" placeholder="Actores" required>
-                        </div>
-
-                        <div class="col-md-4">
-                            <input type="number" class="form-control" name="year" placeholder="Año de estreno" min="1800" max="2022" required>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="number" class="form-control" name="minutes" placeholder="Duración en minutos" min="0" max="600" required>
-                        </div>
-
-                        <div class="col-12 botones">
-                            <button class="btn btn-primary" type="submit">Añadir</button>
-                            <button class="btn btn-secondary generar" type="button">Generar</button>
-                        </div>
-                    </form>
-                </div>
-                
-                <div class="accordion" id="movies">
-                </div>
-                
-            </div>
-
-            <div class="col-sm-4 iulist">
-                <h2>Grupos</h2>
-                <div id="groups">
-
-                </div>
-                <div id="addGroup">
-                    
-                </div>
-            </div>
-
-            <div class="col-sm-4 iulist">
-                <h2>Usuarios</h2>
-                <div id="users">
-
-                </div>
-                <div id="addUser">
-
-                </div>
-            </div>
+            
         </div>
             
 
