@@ -65,7 +65,7 @@ fieldset.rating,
 }
 
 body{
-    background-image: url("/iu2122/src/main/resources/static/img/background.jpg");
+    background-image: url("../img/background.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
