@@ -96,35 +96,30 @@ function createMovieItem(movie) {
     ).join("");
 
     return `
-    <div class="card" data-id="${movie.id}">
-    <div class="card-header"">
-        <h4 class="mb-0" title="${movie.id}">
-            ${movie.name} <small><i>(${movie.year})</i></small>
-        </h4>
-    </div>
+    <div class="card" data-id="${movie.id}" style="background: url('${serverUrl}poster/${movie.imdb}')">
 
-    <div>
-        <div class="card-body pcard">
-            <div class="row">
-                <div class="col-auto">
-                    <img class="iuthumb" src="${serverUrl}poster/${movie.imdb}"/>
-                </div>
-                <div class="col">
-                    <div class="row-12">
-                        ${movie.director} / ${movie.actors} (${movie.minutes} min.)
-                    </div>        
-                    <div class="row-12">
-                        ${ratings}
-                    </div>        
-                    <div class="iucontrol movie">
-                        <button class="rm" data-id="${movie.id}">🗑️</button>
-                        <button class="edit" data-id="${movie.id}">✏️</button>
-                        <button class="rate" data-id="${movie.id}">⭐</button>
-                    </div>  
+        <div>
+            <div class="card-body pcard">
+            <h4 class="mb-0" title="${movie.id}">
+            ${movie.name} <small><i>(${movie.year})</i></small>
+            </h4>
+                <div class="row">
+                    <div class="col">
+                        <div class="row-12">
+                            ${movie.director} / ${movie.actors} (${movie.minutes} min.)
+                        </div>        
+                        <div class="row-12">
+                            ${ratings}
+                        </div>        
+                        <div class="iucontrol movie">
+                            <button class="rm" data-id="${movie.id}">🗑️</button>
+                            <button class="edit" data-id="${movie.id}">✏️</button>
+                            <button class="rate" data-id="${movie.id}">⭐</button>
+                        </div>  
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
  `;
 }

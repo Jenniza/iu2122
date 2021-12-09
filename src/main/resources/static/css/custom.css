@@ -107,10 +107,15 @@ h2{
 .iulist{
     background-color: rgba(0, 0, 0, 0.2);
     font-family: Palatino Linotype;
+    width: 100%;
+    
 }
 
 .card{
     margin:1em;
+    width: 15em;
+    height: 20em;
+    float: left;
 }
 
 .card-header{
@@ -130,4 +135,14 @@ input{
     border: none;
 }
 
+.pcard{
+    background-color: rgba(0, 0, 0, 0.452);
+    color:white;
+}
+
+
+h4{
+    font:bold;
+    font-size: xx-large;
+}
 /** fin CSS para controles de estrellas */
