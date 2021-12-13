@@ -547,6 +547,16 @@ document.querySelector("#movieSearch").addEventListener("input", e => {
     });
 })
 
+document.querySelector("#yearSearch").addEventListener("input", e => {
+    const v = e.target.value.toLowerCase();
+    document.querySelectorAll("#movies div.card").forEach(c => {
+        const m = Pmgr.resolve(c.dataset.id);
+        // aquí podrías aplicar muchos más criterios
+        const ok = m.year == v;
+        c.style.display = ok ? '' : 'none';
+    });
+})
+
 
 // cosas que exponemos para poder usarlas desde la consola
 window.modalEditMovie = modalEditMovie;

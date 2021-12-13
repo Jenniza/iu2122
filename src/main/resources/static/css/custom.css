@@ -105,14 +105,14 @@ h2{
 }
 
 .iulist{
-    background-color: rgba(0, 0, 0, 0.2);
+   
     font-family: Palatino Linotype;
-    width: 100%;
+    width: 98%;
     
 }
 
 .card{
-    margin:1em;
+    margin:1.6em;
     width: 15em;
     height: 20em;
     float: left;
@@ -128,7 +128,8 @@ h2{
 }
 
 #addMovie{
-    background-color: white;
+    background-color: rgb(120, 201,245);
+    border-radius: 5px;
 }
 
 input{
@@ -143,6 +144,23 @@ input{
 
 h4{
     font:bold;
-    font-size: xx-large;
+    font-size: x-large;
 }
+
+input{
+    background-color: rgb(148, 218, 255);
+}
+
+.nav-link{
+    color:rgb(14, 87, 136);
+    font-weight: bold;
+    font-family: Palatino Linotype;
+}
+.nav-link:hover{
+    color:rgb(14, 87, 136);
+    font-weight: bold;
+    background-color: white;
+}
+
+
 /** fin CSS para controles de estrellas */
