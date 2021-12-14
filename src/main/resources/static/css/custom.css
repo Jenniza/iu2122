@@ -162,5 +162,8 @@ input{
     background-color: white;
 }
 
+.adminTabNav{
+    font-weight:lighter;
+}
 
 /** fin CSS para controles de estrellas */
