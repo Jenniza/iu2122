@@ -22,144 +22,162 @@
             <div class="col titulo align-self-center">FILMS MANAGER SYSTEM</div>
             <div class="col-sm-1 align-self-center">
                 <div class="row justify-content-center" id="userIcon"><img src="./img/userIcon.png"></div>
-                <div class="row justify-content-center"> <a class="logout" href="#">Logout</a> </div>
+                <div class="row justify-content-center">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Admin</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Usuario</button>
+                        </li>
+                    </ul>
+                </div>
 
             </div>
         </div>
     </div>
 
-    <div class="content">
 
-        <!-- ver https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="peliculas-tab" data-bs-toggle="tab" data-bs-target="#peliculasTab" type="button" role="tab" aria-controls="home" aria-selected="true">Peliculas</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="grupos-tab" data-bs-toggle="tab" data-bs-target="#gruposTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Grupos</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="usuarios-tab" data-bs-toggle="tab" data-bs-target="#usuariosTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Usuarios</button>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="peliculasTab" role="tabpanel" aria-labelledby="peliculas-tab">
-            <div id="peliculas">
-              <ul>
-                
-                <div class="col-sm-4 content-align-center iulist">
-                    <div class="row">
-                        <div class="col-auto">
-                            <br>
-                        </div>
-                         <!-- Para filtrar por director -->
-                        <ul><div class="col input-group mb-3">
-                            <input type="search" class="form-control" id="movieSearch" placeholder="Filtrar por título" aria-describedby="searchMovieLabel">
-                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                        </div>
-                        </ul>
-                        <!-- Para filtrar por director -->
-                        <div class="col input-group mb-3">
-                            <input type="search" class="form-control" id="directorSearch" placeholder="Filtrar por director" aria-describedby="searchMovieLabel">
-                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                        </div>
-                        <!-- Para filtrar por actores -->
-                        <div class="col input-group mb-3">
-                            <input type="search" class="form-control" id="actorsSearch" placeholder="Filtrar por actor" aria-describedby="searchMovieLabel">
-                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                        </div>
-                        <!-- Para filtrar por grupos -->
-                        <div class="col input-group mb-3">
-                            <input type="search" class="form-control" id="yearSearch" placeholder="Filtrar por año" aria-describedby="searchMovieLabel">
-                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                        </div>
-                        <!-- Para filtrar por duracion -->
-                        <div class="col input-group mb-3">
-                            <input type="search" class="form-control" id="duracionSearch" placeholder="Filtrar por duración en minutos" aria-describedby="searchMovieLabel">
-                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                        </div>
-                        <!-- Para filtrar por etiqueta -->
-                        <div class="col input-group mb-3">
-                            <input type="search" class="form-control" id="tagSearch" placeholder="Filtrar por etiqueta" aria-describedby="searchMovieLabel">
-                            <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                        </div>
-    
-                    </div>
-    
-                    <div id="addMovie" class="formularioValidado">
-                        <h3>Añadir película</h3>
-                        <form class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="f1" name="name" placeholder="Título" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="f2" name="imdb" placeholder="ID en IMDB (ej.: tt1234567)" required pattern="tt[0-9]+">
-                            </div>
-    
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" name="director" placeholder="Director" required>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" class="form-control" name="actors" placeholder="Actores" required>
-                            </div>
-    
-                            <div class="col-md-4">
-                                <input type="number" class="form-control" name="year" placeholder="Año de estreno" min="1800" max="2022" required>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="number" class="form-control" name="minutes" placeholder="Duración en minutos" min="0" max="600" required>
-                            </div>
-    
-                            <div class="col-12 botones">
-                                <button class="btn btn-primary" type="submit">Añadir</button>
-                                <button class="btn btn-secondary generar" type="button">Generar</button>
-                            </div>
-                        </form>
-                    </div>
-                    
-                    <div class="accordion" id="movies">
-                    </div>
-                    
-                </div>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="content">
 
-              </ul>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="gruposTab" role="tabpanel" aria-labelledby="grupos-tab">
-            <div id="grupos">
-              <ul>
-                <div class="col-sm-4 iulist">
-                    <h2>Grupos</h2>
-                    <div id="groups">
-    
-                    </div>
-                    <div id="addGroup">
+                <!-- ver https://getbootstrap.com/docs/5.0/components/navs-tabs/#javascript-behavior -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="peliculas-tab" data-bs-toggle="tab" data-bs-target="#peliculasTab" type="button" role="tab" aria-controls="home" aria-selected="true">Peliculas</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="grupos-tab" data-bs-toggle="tab" data-bs-target="#gruposTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Grupos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="usuarios-tab" data-bs-toggle="tab" data-bs-target="#usuariosTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Usuarios</button>
+                </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="peliculasTab" role="tabpanel" aria-labelledby="peliculas-tab">
+                    <div id="peliculas">
+                    <ul>
                         
+                        <div class="col-sm-4 content-align-center iulist">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <br>
+                                </div>
+                                <!-- Para filtrar por director -->
+                                <ul><div class="col input-group mb-3">
+                                    <input type="search" class="form-control" id="movieSearch" placeholder="Filtrar por título" aria-describedby="searchMovieLabel">
+                                    <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                                </div>
+                                </ul>
+                                <!-- Para filtrar por director -->
+                                <div class="col input-group mb-3">
+                                    <input type="search" class="form-control" id="directorSearch" placeholder="Filtrar por director" aria-describedby="searchMovieLabel">
+                                    <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                                </div>
+                                <!-- Para filtrar por actores -->
+                                <div class="col input-group mb-3">
+                                    <input type="search" class="form-control" id="actorsSearch" placeholder="Filtrar por actor" aria-describedby="searchMovieLabel">
+                                    <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                                </div>
+                                <!-- Para filtrar por grupos -->
+                                <div class="col input-group mb-3">
+                                    <input type="search" class="form-control" id="yearSearch" placeholder="Filtrar por año" aria-describedby="searchMovieLabel">
+                                    <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                                </div>
+                                <!-- Para filtrar por duracion -->
+                                <div class="col input-group mb-3">
+                                    <input type="search" class="form-control" id="duracionSearch" placeholder="Filtrar por duración en minutos" aria-describedby="searchMovieLabel">
+                                    <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                                </div>
+                                <!-- Para filtrar por etiqueta -->
+                                <div class="col input-group mb-3">
+                                    <input type="search" class="form-control" id="tagSearch" placeholder="Filtrar por etiqueta" aria-describedby="searchMovieLabel">
+                                    <span class="input-group-text" id="searchMovieLabel">🔍</span>
+                                </div>
+            
+                            </div>
+            
+                            <div id="addMovie" class="formularioValidado">
+                                <h3>Añadir película</h3>
+                                <form class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="f1" name="name" placeholder="Título" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="f2" name="imdb" placeholder="ID en IMDB (ej.: tt1234567)" required pattern="tt[0-9]+">
+                                    </div>
+            
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="director" placeholder="Director" required>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name="actors" placeholder="Actores" required>
+                                    </div>
+            
+                                    <div class="col-md-4">
+                                        <input type="number" class="form-control" name="year" placeholder="Año de estreno" min="1800" max="2022" required>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="number" class="form-control" name="minutes" placeholder="Duración en minutos" min="0" max="600" required>
+                                    </div>
+            
+                                    <div class="col-12 botones">
+                                        <button class="btn btn-primary" type="submit">Añadir</button>
+                                        <button class="btn btn-secondary generar" type="button">Generar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <div class="accordion" id="movies">
+                            </div>
+                            
+                        </div>
+    
+                    </ul>
                     </div>
                 </div>
-              </ul>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="usuariosTab" role="tabpanel" aria-labelledby="usuarios-tab">
-            <div id="usuarios">
-              <ul>
-                <div class="col-sm-4 iulist">
-                    <h2>Usuarios</h2>
-                    <div id="users">
-    
-                    </div>
-                    <div id="addUser">
-    
+                <div class="tab-pane fade" id="gruposTab" role="tabpanel" aria-labelledby="grupos-tab">
+                    <div id="grupos">
+                    <ul>
+                        <div class="col-sm-4 iulist">
+                            <h2>Grupos</h2>
+                            <div id="groups">
+            
+                            </div>
+                            <div id="addGroup">
+                                
+                            </div>
+                        </div>
+                    </ul>
                     </div>
                 </div>
-              </ul>
-      
+                <div class="tab-pane fade" id="usuariosTab" role="tabpanel" aria-labelledby="usuarios-tab">
+                    <div id="usuarios">
+                    <ul>
+                        <div class="col-sm-4 iulist">
+                            <h2>Usuarios</h2>
+                            <div id="users">
+            
+                            </div>
+                            <div id="addUser">
+            
+                            </div>
+                        </div>
+                    </ul>
+            
+                    </div>
+                </div>
+                </div>
+            
             </div>
-          </div>
         </div>
-      
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
       </div>
-      
+
+    <div class="adminTab">
+        
+    </div>
 
 
     <!-- Modal para dar un rating a una película -->
