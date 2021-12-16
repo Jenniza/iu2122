@@ -105,7 +105,7 @@ h2{
 }
 
 .iulist{
-   
+   margin-top: 1em;
     font-family: Palatino Linotype;
     width: 98%;
     
@@ -132,6 +132,11 @@ h2{
     border-radius: 5px;
 }
 
+#addGroup{
+    background-color: rgb(120, 201,245);
+    border-radius: 5px;
+}
+
 input{
     border: none;
 }
@@ -141,10 +146,13 @@ input{
     color:white;
 }
 
-
 h4{
     font:bold;
     font-size: x-large;
+}
+
+h3{
+    color:white;
 }
 
 input{

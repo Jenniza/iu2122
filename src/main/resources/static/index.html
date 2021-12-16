@@ -65,11 +65,10 @@
                                     <br>
                                 </div>
                                 <!-- Para filtrar por director -->
-                                <ul><div class="col input-group mb-3">
+                                <div class="col input-group mb-3">
                                     <input type="search" class="form-control" id="movieSearch" placeholder="Filtrar por título" aria-describedby="searchMovieLabel">
                                     <span class="input-group-text" id="searchMovieLabel">🔍</span>
                                 </div>
-                                </ul>
                                 <!-- Para filtrar por director -->
                                 <div class="col input-group mb-3">
                                     <input type="search" class="form-control" id="directorSearch" placeholder="Filtrar por director" aria-describedby="searchMovieLabel">
@@ -90,12 +89,6 @@
                                     <input type="search" class="form-control" id="duracionSearch" placeholder="Filtrar por duración en minutos" aria-describedby="searchMovieLabel">
                                     <span class="input-group-text" id="searchMovieLabel">🔍</span>
                                 </div>
-                                <!-- Para filtrar por etiqueta -->
-                                <div class="col input-group mb-3">
-                                    <input type="search" class="form-control" id="tagSearch" placeholder="Filtrar por etiqueta" aria-describedby="searchMovieLabel">
-                                    <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                                </div>
-            
                             </div>
             
                             <div id="addMovie" class="formularioValidado">
@@ -139,19 +132,35 @@
                 </div>
                 <div class="tab-pane fade" id="gruposTab" role="tabpanel" aria-labelledby="grupos-tab">
                     <div id="grupos">
-                    <ul>
+                      <ul>
                         <div class="col-sm-4 iulist">
-                            <h2>Grupos</h2>
+                            <div id="addGroup" class="formularioValidado">
+                                <h2>Añadir grupo</h2>
+                                <form class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="f2" name="Nombre" placeholder="Nombre del grupo" >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="f2" name="Propietario" placeholder="Propietario del grupo" >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="f1" name="Miembros" placeholder="Introduce los nombres de usuario de los miembros con @. Ejemplo @Juan@Jaime@Paula" required>
+                                    </div>   
+                                    <div class="col-12 botones">
+                                        <button class="btn btn-primary" type="submit">Añadir</button>
+
+                                    </div> 
+                                </form>
+                            </div>
+                            
                             <div id="groups">
             
                             </div>
-                            <div id="addGroup">
-                                
-                            </div>
+                          
                         </div>
-                    </ul>
+                      </ul>
                     </div>
-                </div>
+                  </div>
                 <div class="tab-pane fade" id="usuariosTab" role="tabpanel" aria-labelledby="usuarios-tab">
                     <div id="usuarios">
                     <ul>
@@ -185,7 +194,7 @@
                     <button class="nav-link" id="grupos-tab" data-bs-toggle="tab" data-bs-target="#gruposTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Grupos</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="usuarios-tab" data-bs-toggle="tab" data-bs-target="#usuariosTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Usuarios</button>
+                    <button class="nav-link" id="usuarios-tab" data-bs-toggle="tab" data-bs-target="#usuariosTab" type="button" role="tab" aria-controls="profile" aria-selected="false">Perfil</button>
                 </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -199,11 +208,10 @@
                                     <br>
                                 </div>
                                 <!-- Para filtrar por director -->
-                                <ul><div class="col input-group mb-3">
+                                <div class="col input-group mb-3">
                                     <input type="search" class="form-control" id="movieSearch" placeholder="Filtrar por título" aria-describedby="searchMovieLabel">
                                     <span class="input-group-text" id="searchMovieLabel">🔍</span>
                                 </div>
-                                </ul>
                                 <!-- Para filtrar por director -->
                                 <div class="col input-group mb-3">
                                     <input type="search" class="form-control" id="directorSearch" placeholder="Filtrar por director" aria-describedby="searchMovieLabel">
@@ -224,12 +232,7 @@
                                     <input type="search" class="form-control" id="duracionSearch" placeholder="Filtrar por duración en minutos" aria-describedby="searchMovieLabel">
                                     <span class="input-group-text" id="searchMovieLabel">🔍</span>
                                 </div>
-                                <!-- Para filtrar por etiqueta -->
-                                <div class="col input-group mb-3">
-                                    <input type="search" class="form-control" id="tagSearch" placeholder="Filtrar por etiqueta" aria-describedby="searchMovieLabel">
-                                    <span class="input-group-text" id="searchMovieLabel">🔍</span>
-                                </div>
-            
+                                
                             </div>
             
                             <div id="addMovie" class="formularioValidado">
@@ -273,19 +276,35 @@
                 </div>
                 <div class="tab-pane fade" id="gruposTab" role="tabpanel" aria-labelledby="grupos-tab">
                     <div id="grupos">
-                    <ul>
+                      <ul>
                         <div class="col-sm-4 iulist">
-                            <h2>Grupos</h2>
+                            <div id="addGroup" class="formularioValidado">
+                                <h2>Añadir grupo</h2>
+                                <form class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="f2" name="Nombre" placeholder="Nombre del grupo" >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="f2" name="Propietario" placeholder="Propietario del grupo" >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="f1" name="Miembros" placeholder="Introduce los nombres de usuario de los miembros con @. Ejemplo @Juan@Jaime@Paula" required>
+                                    </div>   
+                                    <div class="col-12 botones">
+                                        <button class="btn btn-primary" type="submit">Añadir</button>
+
+                                    </div> 
+                                </form>
+                            </div>
+                            
                             <div id="groups">
             
                             </div>
-                            <div id="addGroup">
-                                
-                            </div>
+                          
                         </div>
-                    </ul>
+                      </ul>
                     </div>
-                </div>
+                  </div>
                 <div class="tab-pane fade" id="usuariosTab" role="tabpanel" aria-labelledby="usuarios-tab">
                     <div id="usuarios">
                     <ul>

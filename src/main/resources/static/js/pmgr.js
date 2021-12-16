@@ -600,14 +600,16 @@ document.querySelector("#yearSearch").addEventListener("input", e => {
  * búsqueda básica de películas, por minutoa
  */
  document.querySelector("#duracionSearch").addEventListener("input", e => {
-    const v = e.target.value.toString();
+    const v = parseInt(e.target.value,10);
     document.querySelectorAll("#movies div.card").forEach(c => {
         const m = Pmgr.resolve(c.dataset.id);
         // aquí podrías aplicar muchos más criterios
-        const ok = m.minutes.toString().indexOf(v) >= 0;
+        console.log(v+10);
+        const ok = (m.minutes <= v + 10 && m.minutes >= v - 10);
         c.style.display = ok ? '' : 'none';
     });
 })
+
 
 
 // cosas que exponemos para poder usarlas desde la consola
