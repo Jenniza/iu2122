@@ -209,6 +209,7 @@ function nuevaPelicula(formulario) {
     });
 }
 
+
 /**
  * Usa valores de un formulario para modificar una película
  * @param {Element} formulario para con los valores a subir
@@ -348,7 +349,13 @@ function update() {
         document.querySelectorAll(".iucontrol.movie button.rm").forEach(b =>
             b.addEventListener('click', e => {
                 const id = e.target.dataset.id; // lee el valor del atributo data-id del boton
-                Pmgr.rmMovie(id).then(update);
+                var confirm = window.confirm('¿Estás seguro de que quieres eliminar esta película?');
+                if (confirm === true) {
+                    window.alert('Película eliminada de la base de datos');
+                    Pmgr.rmMovie(id).then(update);
+                } else { 
+                    window.alert('La película no será eliminada de la base de datos');
+                }
             }));
         // botones de editar películas
         document.querySelectorAll(".iucontrol.movie button.edit").forEach(b =>
@@ -398,10 +405,26 @@ function update() {
             }));
         // botones de borrar grupos
         document.querySelectorAll(".iucontrol.group button.rm").forEach(b =>
-            b.addEventListener('click', e => Pmgr.rmGroup(e.target.dataset.id).then(update)));
+            b.addEventListener('click', e => {
+                var confirm = window.confirm('¿Estás seguro de que quieres borrar el grupo?');
+                if (confirm === true) {
+                    Pmgr.rmGroup(e.target.dataset.id).then(update);
+                    window.alert('Grupo borrado');
+                } else { 
+                    window.alert('Grupo no borrado');
+                }
+            }));
         // botones de borrar usuarios
         document.querySelectorAll(".iucontrol.user button.rm").forEach(b =>
-            b.addEventListener('click', e => Pmgr.rmUser(e.target.dataset.id).then(update)));
+            b.addEventListener('click', e => {
+                var confirm = window.confirm('¿Estás seguro de que quieres borrar el usuario?');
+                if (confirm === true) {
+                    Pmgr.rmUser(e.target.dataset.id).then(update);
+                    window.alert('Usuario borrado');
+                } else { 
+                    window.alert('Usuario NO borrado');
+                }
+            }));
 
 
     } catch (e) {
@@ -461,7 +484,13 @@ login("g6", "4AX3y");
     f.querySelector("button[type='submit']").addEventListener('click', (e) => {
         if (f.checkValidity()) {
             e.preventDefault(); // evita que se haga lo normal cuando no hay errores
-            nuevaPelicula(f); // añade la pelicula según los campos previamente validados
+            var confirm = window.confirm('¿Estás seguro de que añadir la película?');
+            if (confirm === true) {
+                nuevaPelicula(f); // añade la pelicula según los campos previamente validados
+                window.alert('Película añadida');
+            } else { 
+                window.alert('Película NO añadida');
+            }
         }
     });
     // botón de generar datos (sólo para pruebas)
@@ -474,12 +503,18 @@ login("g6", "4AX3y");
     const f = document.querySelector("#movieEditForm");
     // botón de enviar
     document.querySelector("#movieEdit button.edit").addEventListener('click', e => {
-        console.log("enviando formulario!");
-        if (f.checkValidity()) {
-            modificaPelicula(f); // modifica la pelicula según los campos previamente validados
-        } else {
-            e.preventDefault();
-            f.querySelector("button[type=submit]").click(); // fuerza validacion local
+        var confirm = window.confirm('¿Estás seguro de que quieres editar con esos campos esta película?');
+        if (confirm === true) {
+            console.log("enviando formulario!");
+            if (f.checkValidity()) {
+                modificaPelicula(f); // modifica la pelicula según los campos previamente validados
+            } else {
+                e.preventDefault();
+                f.querySelector("button[type=submit]").click(); // fuerza validacion local
+            }
+            window.alert('Película editada');
+        } else { 
+            window.alert('Película NO editada');
         }
     });
 } {
@@ -574,18 +609,6 @@ document.querySelector("#yearSearch").addEventListener("input", e => {
     });
 })
 
-/**
- * búsqueda básica de películas, por etiquetas
- */
- document.querySelector("#tagSearch").addEventListener("input", e => {
-    const v = e.target.value.toLowerCase();
-    document.querySelectorAll("#movies div.card").forEach(c => {
-        const m = Pmgr.resolve(c.dataset.id);
-        // aquí podrías aplicar muchos más criterios
-        const ok = m.labels.toLowerCase().indexOf(v) >= 0;
-        c.style.display = ok ? '' : 'none';
-    });
-})
 
 // cosas que exponemos para poder usarlas desde la consola
 window.modalEditMovie = modalEditMovie;

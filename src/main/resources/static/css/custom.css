@@ -154,6 +154,7 @@ input{
 .nav-link{
     color:rgb(14, 87, 136);
     font-weight: bold;
+    font-size: large;
     font-family: Palatino Linotype;
 }
 .nav-link:hover{
