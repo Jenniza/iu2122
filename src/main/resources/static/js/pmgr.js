@@ -137,13 +137,13 @@ function createGroupItem(group) {
     ).join(" ");
 
     return `
-    <div class="card">
+    <div class="card" data-id="${group.id}">
     <div class="card-header">
         <h4 class="mb-0" title="${group.id}">
-            <b class="pcard">${group.name}</b>
+            <b style="color:white">${group.name}</b>
         </h4>
     </div>
-    <div class="card-body pcard">
+    <div class="card-body pcard" style="background-color:rgba(5, 73, 110)">
         <div class="row-sm-11">
             <span class="badge bg-primary">${Pmgr.resolve(group.owner).username}</span>
             ${allMembers}
@@ -152,6 +152,8 @@ function createGroupItem(group) {
         <div class="row-sm-1 iucontrol group">
             <button class="rm" data-id="${group.id}">🗑️</button>
             <button class="edit" data-id="${group.id}">✏️</button>
+            <button class= "" data -id="${group.id}">📥</button>
+            <button class= "" data -id="${group.id}">📤</button>
         </div>
     </div>              
     </div>
@@ -174,18 +176,19 @@ function createUserItem(user) {
     <div class="card">
     <div class="card-header">
         <h4 class="mb-0" title="${user.id}">
-            <b class="pcard">${user.username}</b>
+            <b style="color:white">${user.username}</b>
         </h4>
+        <div class="row-sm-1 iucontrol user">
+            <button class="rm" data-id="${user.id}">🗑️</button>
+            <button class="edit" data-id="${user.id}">✏️</button>
+        </div>   
     </div>
-    <div class="card-body pcard">
+    <div class="card-body pcard" style="background-color:rgba(5, 73, 110)">
         <div class="row-sm-11">
             ${allGroups}
             ${allPending}
         <div>
-        <div class="row-sm-1 iucontrol user">
-            <button class="rm" data-id="${user.id}">🗑️</button>
-            <button class="edit" data-id="${user.id}">✏️</button>
-        </div>        
+             
     </div>
     </div>
 `;
